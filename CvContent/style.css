@@ -43,6 +43,9 @@
     background-color: #58257b;
     color: white;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .action-but > button{
     border-radius: 5px;
