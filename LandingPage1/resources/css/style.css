@@ -233,4 +233,110 @@ cite img{
 /*---------------------------------------------------------------------------------*/
 /*------------------------------SPONSORS---------------------------------------*/
 /*---------------------------------------------------------------------------------*/
-
+.sponsor-section{
+    margin-bottom: 50px;
+}
+.sponsor-showcase{
+    margin: 50px 10%;
+    text-align: center;
+}
+.sponsor-showcase li{
+    float: left;
+    width: 30%;
+}
+.logo-sponsor{
+    width: 140px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.logo-sponsor:hover, .logo-sponsor:active{
+    transform: scale(1.1);
+}
+figcaption{
+    font-size: 120%;
+    color: #265077;
+    font-weight: 900;
+    cursor: pointer;
+}
+/*---------------------------------------------------------------------------------*/
+/*------------------------------CONTACT---------------------------------------*/
+/*---------------------------------------------------------------------------------*/
+.contact-section{
+    background-image: linear-gradient(45deg, rgba(2,33,64,0.8), rgba(45,95,93,0.85)), url('../img/background5.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+.information{
+    margin-top: 50px;
+}
+.information li{
+    font-size: 90%;
+    line-height: 200%;
+}
+.information li i{
+    color: #265077;
+    transition: all .3s;
+}
+.information li i:hover,
+.information li i:active{
+    transform: scale(1.5);
+}
+.social-icon{
+    margin-top: 50px;
+}
+.social-icon li{
+    display: inline-block;
+    margin-left: 10%;
+}
+.social-icon li i{
+    font-size: 200%;
+    color: white;
+    transition: all .5s;
+}
+.social-icon li i:hover,
+.social-icon li i:active{
+    transform: scale(1.5);
+    color: #d35400;
+}
+.contact-section form{
+    background-color: rgba(0, 0, 0, .3);
+    margin-left: 40%;
+}
+form{
+    padding: 50px 30px;
+}
+form .row{
+    margin: 10% 0 0 10%;
+    height: 50%;
+}
+.row label{
+    font-size: 80%;
+}
+input, textarea{
+    padding: 20px;
+    color: white;
+    font-family: 'Lato' sans-serif;
+    background-color: rgba(0, 0, 0, .5);
+}
+input[type="text"], input[type="email"], textarea{
+    width: 100%;
+}
+textarea{
+    resize: none;
+}
+input[type="submit"]{
+    outline: none;
+    font-size: 150%;
+    font-weight: 500;
+}
+/*---------------------------------------------------------------------------------*/
+/*------------------------------FOOTER---------------------------------------*/
+/*---------------------------------------------------------------------------------*/
+footer{
+    text-align: center;
+    color: white;
+    background-color: #494949;
+    padding: 20px;
+}
