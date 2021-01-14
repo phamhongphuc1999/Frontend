@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phạm Phúc|Facebook</title>
 
-    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="./resources/css/header.css">
     <link rel="stylesheet" href="./resources/css/queries.css">
 </head>
 <body>
@@ -14,8 +14,14 @@
             <span class="facebook-icon-span"><i class="fa fa-facebook-official"></i></span>
         </a>
         <div class="search-area">
-            <span><i class="fas fa-search"></i></span>
-            <input class="search-input" type="text" placeholder="Search Facebook">
+            <div class="search-area-main">
+                <span class="search-cancel"><i class="fas fa-angle-double-left"></i></span>
+                <span><i class="fas fa-search search-icon"></i></span>
+                <input class="search-input" type="text" placeholder="Search Facebook" onfocus="searchFocus()" onblur="searchBlur()">
+            </div>
+            <div class="search-area-extend">
+                No recent searchs
+            </div>
         </div>
         <ul class="main-header">
             <li class="header-item">
@@ -40,11 +46,33 @@
             </li>
         </ul>
         <div class="avatar-icon">
-            <img src="./resources/images/avatar.jpg" alt="avatar">
-            <p>Phúc</p>
+            <div class="avatar-icon-container">
+                <img src="./resources/images/avatar.jpg" alt="avatar">
+                <p>Phúc</p>
+            </div>
         </div>
+        <ul class="extend-header-item">
+            <li class="extend-item">
+                <span><i class="fas fa-plus"></i></span>
+                <div class="tooltip">Create</div>
+            </li>
+            <li class="extend-item">
+                <span><i class="fab fa-facebook-messenger"></i></span>
+                <div class="tooltip">Messenger</div>
+                <div class="number-message">1</div>
+            </li>
+            <li class="extend-item">
+                <span><i class="fas fa-bell"></i></span>
+                <div class="tooltip">Notifications</div>
+            </li>
+            <li class="extend-item">
+                <span><i class="fa fa-user-circle-o"></i></span>
+                <div class="tooltip">Accounts</div>
+            </li>
+        </ul>
     </header>
 
     <script src="https://kit.fontawesome.com/d1d31ef1a1.js" crossorigin="anonymous"></script>
+    <script src="./resources/js/index.js"></script>
 </body>
 </html>
