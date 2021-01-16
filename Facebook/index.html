@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./resources/css/header.css">
     <link rel="stylesheet" href="./resources/css/queries.css">
 </head>
+
 <body>
     <header>
         <a class="facebook-icon-link" href="#">
@@ -17,7 +19,8 @@
             <div class="search-area-main">
                 <span class="search-cancel"><i class="fas fa-angle-double-left"></i></span>
                 <span><i class="fas fa-search search-icon"></i></span>
-                <input class="search-input" type="text" placeholder="Search Facebook" onfocus="searchFocus()" onblur="searchBlur()">
+                <input class="search-input" type="text" placeholder="Search Facebook" onfocus="searchFocus()"
+                    onblur="searchBlur()">
             </div>
             <div class="search-area-extend">
                 No recent searchs
@@ -51,28 +54,42 @@
                 <p>Phúc</p>
             </div>
         </div>
-        <ul class="extend-header-item">
-            <li class="extend-item">
-                <span><i class="fas fa-plus"></i></span>
-                <div class="tooltip">Create</div>
-            </li>
-            <li class="extend-item">
-                <span><i class="fab fa-facebook-messenger"></i></span>
-                <div class="tooltip">Messenger</div>
-                <div class="number-message">1</div>
-            </li>
-            <li class="extend-item">
-                <span><i class="fas fa-bell"></i></span>
-                <div class="tooltip">Notifications</div>
-            </li>
-            <li class="extend-item">
-                <span><i class="fa fa-user-circle-o"></i></span>
-                <div class="tooltip">Accounts</div>
-            </li>
-        </ul>
+        <div class="extend-header-item">
+            <ul class="extend-header-item-ul">
+                <li class="extend-item" onclick="headerClick()">
+                    <span><i class="fas fa-plus"></i></span>
+                    <div class="tooltip">Create</div>
+                </li>
+                <li class="extend-item" onclick="headerClick()">
+                    <span><i class="fab fa-facebook-messenger"></i></span>
+                    <div class="tooltip">Messenger</div>
+                    <div class="number-message">1</div>
+                </li>
+                <li class="extend-item" onclick="headerClick()">
+                    <span><i class="fas fa-bell"></i></span>
+                    <div class="tooltip">Notifications</div>
+                </li>
+                <li class="extend-item" onclick="headerClick()" onmousewheel="headerMouseOver()">
+                    <span><i class="fa fa-user-circle-o"></i></span>
+                    <div class="tooltip">Accounts</div>
+                </li>
+            </ul>
+            <div class="header-extend-box" id="account-header">
+                <div class="header-extend-box-items">
+                    <div class="see-profile">123</div>
+                    <hr>
+                    <div class="give-feedback"></div>
+                    <hr>
+                    <div class="setting"></div>
+                </div>
+
+            </div>
+        </div>
+
     </header>
 
     <script src="https://kit.fontawesome.com/d1d31ef1a1.js" crossorigin="anonymous"></script>
     <script src="./resources/js/index.js"></script>
 </body>
+
 </html>

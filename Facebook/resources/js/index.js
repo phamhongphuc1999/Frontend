@@ -11,8 +11,9 @@ function searchFocus(){
     var searchArea = document.getElementsByClassName('search-area')[0];
     searchArea.classList.add('specified-search-area');
 
-    var searchArea = document.getElementsByClassName('search-area')[0];
-    searchArea.style.display = 'inline';
+    var searchArea = document.getElementsByClassName('search-area-extend')[0];
+    searchArea.style.display = 'block';
+    searchArea.style.marginLeft = '0px';
 }
 function searchBlur(){
     var searchIcon = document.getElementsByClassName('search-icon')[0];
@@ -27,6 +28,15 @@ function searchBlur(){
     var searchArea = document.getElementsByClassName('search-area')[0];
     searchArea.classList.remove('specified-search-area');
 
-    var searchArea = document.getElementsByClassName('search-area')[0];
-    searchArea.classList.add('specified-search-area');
+    var searchArea = document.getElementsByClassName('search-area-extend')[0];
+    searchArea.style.display = 'none';
+    searchArea.style.marginLeft = '10px';
+}
+function headerClick(){
+    var extendBox = document.getElementById('account-header');
+    extendBox.style.display = 'inline';
+}
+function headerMouseOver(){
+    var extendBox = document.getElementById('account-header');
+    extendBox.style.display = 'none';
 }
