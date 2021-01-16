@@ -32,11 +32,9 @@ function searchBlur(){
     searchArea.style.display = 'none';
     searchArea.style.marginLeft = '10px';
 }
-function headerClick(){
-    var extendBox = document.getElementById('account-header');
-    extendBox.style.display = 'inline';
-}
-function headerMouseOver(){
-    var extendBox = document.getElementById('account-header');
-    extendBox.style.display = 'none';
-}
+$(document).click(function(event){
+    var target = $(event.target);
+    if(target.is('#accounts') || target.is('.fa-user-circle-o'))
+        $('#account-header').css('display', 'inline');
+    else $('#account-header').css('display', 'none');
+})

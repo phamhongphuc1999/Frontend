@@ -3,22 +3,41 @@
     margin: 0;
     box-sizing: border-box;
 }
+header{
+    background-color: rgb(235, 206, 206);
+    width: 100%;
+}
 li{
     list-style: none;
 }
+hr{
+    color: gray;
+    height: 1px;
+}
+/*-------------------------------------- REUSE --------------------------------- */
 .specified-search-area{
     display: block;
     background-color: rgb(228, 217, 217);
     box-shadow: 0px 5px 15px 5px #265077;
     border-top-right-radius: 10px;
 }
+.facebook-text{
+    font-weight: 900;
+    font-size: 110%;
+}
+.normal-text{
+    color: gray;
+}
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
 /*-------------------------------------- HEADER --------------------------------- */
-header{
+.fixed-header{
     position: fixed;
     display: flex;
-    background-color: rgb(235, 206, 206);
     height: 55px;
-    width: 100%;
 }
 .facebook-icon-link{
     display: flex;
@@ -181,13 +200,65 @@ header{
 .header-extend-box{
     position: absolute;
     background-color:  rgb(228, 217, 217);
-    transform: translate(0, 110%);
+    top: 55px;
     right: 10px;
-    width: 110%;
+    width: 200%;
     display: none;
 }
 .header-extend-box-items{
-    padding: 10px;
+    padding: 10px 40px;
+}
+.row-setting{
+    padding: 20px 0px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+.row-setting span{
+    width: 20%;
+}
+.row-setting span i{
+    font-size: 150%;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.row-setting .header-extend-box-info{
+    margin: 0;
+}
+.row-setting:hover{
+    content: " ";
+    background-color: rgb(228, 217, 217, 0.4);
+}
+.arrow::after{
+    content: " ";
+    position: absolute;
+    right: 0;
+    padding: 7px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    transform: rotate(45deg);
+}
+.text-area{
+    text-align: center;
+    font-weight: 500;
+    font-size: 130%;
+}
+.see-profile{
+    display: flex;
+}
+.header-extend-box-avatar{
+    width: 20%;
+}
+.header-extend-box-avatar img{
+    width: 100%;
+    border-radius: 50%;
+}
+.header-extend-box-info{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .number-message{
     position: absolute;
