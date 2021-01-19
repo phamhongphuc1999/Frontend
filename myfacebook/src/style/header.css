@@ -1,0 +1,383 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+}
+li{
+    list-style: none;
+}
+hr{
+    color: gray;
+    height: 1px;
+}
+/*-------------------------------------- REUSE --------------------------------- */
+.specified-search-area{
+    display: block;
+    background-color: rgb(228, 217, 217);
+    box-shadow: 0px 5px 15px 5px #265077;
+    border-top-right-radius: 10px;
+}
+.facebook-text{
+    font-weight: 900;
+    font-size: 110%;
+}
+.normal-text{
+    color: gray;
+}
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+/*-------------------------------------- FIXED HEADER --------------------------------- */
+.fixed-header{
+    position: fixed;
+    display: flex;
+    height: 55px;
+    background-color: rgb(235, 206, 206);
+}
+.facebook-icon-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+.facebook-icon-span{
+    display: inline-block;
+}
+.facebook-icon-span i{
+    font-size: 250%;
+    color: #1877F2;
+}
+.search-area-main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+}
+.search-cancel{
+    font-size: 130%;
+    color: rgb(54, 52, 52);
+    margin: 0px 20px 0px 10px;
+    padding: 5px 2px;
+    display: none;
+    border-radius: 50%;
+}
+.search-cancel:hover{
+    background-color: rgb(238, 227, 227);
+}
+.search-icon{
+    position: absolute;
+    color: rgb(248, 244, 244);
+    transform: translate(70%, -50%);
+}
+.search-input{
+    background-color: rgb(172, 169, 169);
+    transition: .5s;
+    color: rgb(248, 244, 244);
+    border: none;
+    outline: none;
+    height: 70%;
+    width: 290px;
+    padding-left: 50px;
+    border-radius: 20px;
+    font-size: 110%;
+}
+.search-input:focus{
+    padding-left: 20px;
+}
+.search-area-extend{
+    display: none;
+    background-color: red;
+    margin-left: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    background-color: rgb(228, 217, 217);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.main-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tooltip{
+    position: absolute;
+    transform: translate(0, 155%);
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    opacity: 0;
+    transition: .3s;
+}
+.header-item{
+    cursor: pointer;
+    position: relative;
+    padding: 0 40px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.header-item:hover{
+    background-color: gray;
+}
+.header-item:hover .tooltip{
+    opacity: 1;
+}
+.header-item span i{
+    font-size: 150%;
+}
+.avatar-icon{
+    margin-left: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar-icon-container{
+    cursor: pointer;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56, 89, 153, 0.5);
+    border-radius: 20px;
+}
+.avatar-icon-container:hover{
+    background-color: rgb(56, 89, 153);
+}
+.avatar-icon img{
+    height: 28px;
+    padding: 2px 0px 2px 2px;
+    border-radius: 50%;
+}
+.avatar-icon p{
+    font-size: 110%;
+    font-weight: 600;
+    color: #3578E5;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.extend-header-item{
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.extend-header-item-ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.extend-item{
+    cursor: pointer;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: gray;
+}
+.extend-item:hover .tooltip{
+    opacity: 1;
+}
+.extend-item span i{
+    font-size: 150%;
+}
+.header-extend-box{
+    position: absolute;
+    background-color:  rgb(228, 217, 217);
+    top: 55px;
+    right: 10px;
+    width: 200%;
+    display: none;
+}
+.header-extend-box-items{
+    padding: 10px 40px;
+}
+.row-setting{
+    padding: 20px 0px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+.row-setting span{
+    width: 20%;
+}
+.row-setting span i{
+    font-size: 150%;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.row-setting .header-extend-box-info{
+    margin: 0;
+}
+.row-setting:hover{
+    content: " ";
+    background-color: rgb(228, 217, 217, 0.4);
+}
+.arrow::after{
+    content: " ";
+    position: absolute;
+    right: 0;
+    padding: 7px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    transform: rotate(45deg);
+}
+.text-area{
+    text-align: center;
+    font-weight: 500;
+    font-size: 130%;
+}
+.see-profile{
+    display: flex;
+}
+.header-extend-box-avatar{
+    width: 20%;
+}
+.header-extend-box-avatar img{
+    width: 100%;
+    border-radius: 50%;
+}
+.header-extend-box-info{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.number-message{
+    position: absolute;
+    transform: translate(100%, -100%);
+    background-color: red;
+    border-radius: 50%;
+}
+/*-------------------------------------- BIO HEADER --------------------------------- */
+.bio-header{
+    margin: 0px 15%;
+}
+.bio-image{
+    background-position: center;
+    background-size: contain;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 400px;
+}
+.bio-image img{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.avatar-bio{
+
+}
+.edit-cover-photo{
+    position: absolute;
+}
+.bio-info{
+    text-align: center;
+    padding-top: 50px;
+}
+.bio-info .text-area{
+    font-weight: 900;
+    font-size: 200%;
+}
+.add-bio{
+    padding: 10px 0px;
+    color: #1877F2;
+    font-weight: bold;
+    cursor: pointer;
+}
+.add-bio div{
+    display:inline-block;
+    border: 2px solid transparent;
+}
+.add-bio div:hover{
+    border-bottom: 2px solid #1877F2;
+}
+/*-------------------------------------- OTHER HEADER --------------------------------- */
+.other-menu{
+    display: flex;
+    padding: 20px 5px;
+    height: 90px;
+}
+.other-main-menu{
+    width: 50%;
+}
+.main-area{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.common-item{
+    font-weight: bold;
+    font-size: 110%;
+    width: 20%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.item{
+    color: gray;
+    border-radius: 5px;
+}
+.item:hover{
+    background-color: rgb(238, 231, 231);
+}
+.active{
+    color: rgb(95, 95, 240);
+    border-bottom: 2px solid rgb(95, 95, 240);
+}
+.dropdown-item{
+    position: relative;
+}
+.dropdown-item::after{
+    position: absolute;
+    content: "";
+    border: 3px solid gray;
+    padding: 3px;
+    background-color: gray;
+}
+.other-icon{
+    display: flex;
+    width: 50%;
+    padding-left: 20px;
+}
+.main-icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.icon-item{
+    color: gray;
+    text-align: center;
+    font-size: 110%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    background-color:  rgb(238, 231, 231);
+    margin: 2px 5px;
+    padding: 0px 10px;
+    border-radius: 5px;
+}
