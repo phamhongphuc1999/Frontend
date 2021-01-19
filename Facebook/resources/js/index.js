@@ -38,3 +38,17 @@ $(document).click(function(event){
         $('#account-header').css('display', 'inline');
     else $('#account-header').css('display', 'none');
 })
+$('.common-item').click(function(event){
+    var target = $(event.target);
+    if(!target.attr('class').split(/\s+/).includes('dropdown-item')){
+        var currentActive = $('.active');
+        currentActive.removeClass('active');
+        currentActive.addClass('item');
+        
+        target.addClass('active');
+        target.removeClass('item');
+    }
+})
+$('.dropdown-item').click(function(){
+    
+})
