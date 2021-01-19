@@ -1,6 +1,22 @@
 import React, {Component} from 'react';
 
 class BioHeader extends Component{
+    constructor(props) {
+        super(props);
+
+        this.clickItemEvent = this.clickItemEvent.bind(this);
+    }
+
+    clickItemEvent(e){
+        let currentTarget = this.mainArea.querySelector('.active');
+        currentTarget.classList.remove('active');
+        currentTarget.classList.add('item');
+
+        let target = e.target;
+        target.classList.add('active');
+        target.classList.remove('item');
+    }
+
     render() {
         return(
             <div className={"bio-header"}>
@@ -21,11 +37,11 @@ class BioHeader extends Component{
                 <hr/>
                 <div className="other-menu">
                     <div className="other-main-menu">
-                        <div className="main-area">
-                            <div className="common-item active">Posts</div>
-                            <div className="common-item item">About</div>
-                            <div className="common-item item">Friends</div>
-                            <div className="common-item item">Photos</div>
+                        <div className="main-area" ref={c => (this.mainArea = c)}>
+                            <div className="common-item active" onClick={this.clickItemEvent}>Posts</div>
+                            <div className="common-item item" onClick={this.clickItemEvent}>About</div>
+                            <div className="common-item item" onClick={this.clickItemEvent}>Friends</div>
+                            <div className="common-item item" onClick={this.clickItemEvent}>Photos</div>
                             <div className="common-item item dropdown-item">More</div>
                         </div>
                     </div>
