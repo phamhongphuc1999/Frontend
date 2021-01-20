@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import bioImage from '../../images/bio.jpg';
 
 class BioHeader extends Component{
     constructor(props) {
@@ -21,7 +22,7 @@ class BioHeader extends Component{
         return(
             <div className={"bio-header"}>
                 <div className="bio-image">
-                    <img src="./resources/images/bio.jpg" alt="bio-image" />
+                    <img src={bioImage} alt="bio-image" />
                     {/*<div class="avatar-bio"></div>*/}
                     {/*<div class="edit-cover-photo">*/}
                     {/*    <span><i class="fa fa-camera" aria-hidden="true"></i></span>*/}

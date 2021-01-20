@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ListItemHeader from "./ListItemHeader";
 import SearchAreaHeader from "./SearchAreaHeader";
 import ExtendHeader from "./ExtendHeader";
+import avatar from '../../images/avatar.jpg';
 
 class FixedHeader extends Component {
     render() {
@@ -17,7 +18,7 @@ class FixedHeader extends Component {
                 </ul>
                 <div className="avatar-icon">
                     <div className="avatar-icon-container">
-                        <img src={require('../../images/avatar.jpg')}/>
+                        <img src={avatar} alt={'avatar'}/>
                         <p>Phúc</p>
                     </div>
                 </div>
