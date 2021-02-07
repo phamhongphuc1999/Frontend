@@ -1,14 +1,47 @@
-import ThemeContext from "./context";
-import {ThemedButton, Example} from "./ThemedButton";
+import {ThemeContext, themes} from './DynamicContext/theme-context';
+import ThemedButton from './DynamicContext/themed-button';
 import React from "react";
-import StateApp from "./userstate";
+import {CountReducer} from "./userstate";
 
-function App() {
+function Toolbar(props) {
     return (
-        <ThemeContext.Provider value='abc'>
-            <StateApp></StateApp>
-        </ThemeContext.Provider>
+        <ThemedButton onClick={props.changeTheme}>
+            Change Theme
+        </ThemedButton>
     );
+}
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            theme: themes.light,
+        };
+
+        this.toggleTheme = () => {
+            this.setState(state => ({
+                theme: state.theme === themes.dark ? themes.light : themes.dark,
+            }));
+        };
+    }
+
+    render() {
+        // The ThemedButton button inside the ThemeProvider
+        // uses the theme from state while the one outside uses
+        // the default dark theme
+        return (
+            <div>
+                <ThemeContext.Provider value={this.state.theme}>
+                    <Toolbar changeTheme={this.toggleTheme} />
+                </ThemeContext.Provider>
+                <br/>
+                <div>
+                    <ThemedButton />
+                </div>
+            </div>
+
+        );
+    }
 }
 
 export default App;

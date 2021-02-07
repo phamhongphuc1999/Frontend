@@ -1,64 +1,62 @@
-import React, {useReducer} from 'react';
+import React, {Component, useState, useReducer} from 'react'
 
-const initialTodos = [
-    {
-        id: 'a',
-        task: 'Learn React',
-        complete: false,
-    },
-    {
-        id: 'b',
-        task: 'Learn Firebase',
-        complete: false,
-    },
-];
-
-const todoReducer = (state, action) => {
-    switch (action.type) {
-        case 'DO_TODO':
-            return state.map(todo => {
-                if (todo.id === action.id) {
-                    return { ...todo, complete: true };
-                } else {
-                    return todo;
-                }
-            });
-        case 'UNDO_TODO':
-            return state.map(todo => {
-                if (todo.id === action.id) {
-                    return { ...todo, complete: false };
-                } else {
-                    return todo;
-                }
-            });
-        default:
-            return state;
+class CountClass extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0
+        }
     }
-};
 
-const StateApp = () => {
-    const [todos, dispatch] = useReducer(todoReducer, initialTodos);
+    render() {
+        return (
+            <div>
+                <p>Bạn đã bấm {this.state.count}</p>
+                <button onClick={() => this.setState({count: this.state.count + 1})}>
+                    Bấm vào đây
+                </button>
+            </div>
+        )
+    }
+}
 
-    const handleChange = todo => {
-        dispatch({
-            type: todo.complete ? 'UNDO_TODO' : 'DO_TODO',
-            id: todo.id,
-        });
-    };
-
+const Count = () => {
+    const [count, setCount] = useState(0);
     return (
-        <ul>
-            {todos.map(todo => (
-                <li key={todo.id}>
-                    <label>
-                        <input type="checkbox" checked={todo.complete}
-                            onChange={() => handleChange(todo)}/>
-                        {todo.task}
-                    </label>
-                </li>
-            ))}
-        </ul>
-    );
-};
+        <div>
+            <p>Bạn đã bấm {count}</p>
+            <button onClick={() => setCount(count + 1)}>
+                Bấm vào đây
+            </button>
+        </div>
+    )
+}
 
-export default StateApp;
+function reducer(state, action) {
+    switch (action.type) {
+        case 'increment':
+            return {count: state.count + 1};
+        case 'decrement':
+            if(state.count > 0) return {count: state.count - 1};
+            else return {count: 0};
+        default:
+            throw new Error();
+    }
+}
+
+function Counter() {
+    const [state, dispatch] = useReducer(reducer, {count: 0});
+    return (
+        <>
+            Count: {state.count}
+            <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+            <button onClick={() => dispatch({type: 'increment'})}>+</button>
+        </>
+    );
+}
+
+export {
+    CountClass,
+    Counter,
+    Count
+}
