@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import {App, AppHook} from './App';
 import reportWebVitals from './reportWebVitals';
-import {Counter} from './userstate';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Counter/>
+        <AppHook />
     </React.StrictMode>,
     document.getElementById('root')
 );

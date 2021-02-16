@@ -1,7 +1,7 @@
 import {ThemeContext, themes} from './DynamicContext/theme-context';
 import ThemedButton from './DynamicContext/themed-button';
-import React from "react";
-import {CountReducer} from "./userstate";
+import React, {useState} from "react";
+import ipfsClient from 'ipfs-http-client';
 
 function Toolbar(props) {
     return (
@@ -26,22 +26,41 @@ class App extends React.Component {
     }
 
     render() {
-        // The ThemedButton button inside the ThemeProvider
-        // uses the theme from state while the one outside uses
-        // the default dark theme
         return (
             <div>
                 <ThemeContext.Provider value={this.state.theme}>
-                    <Toolbar changeTheme={this.toggleTheme} />
+                    <Toolbar changeTheme={this.toggleTheme}/>
                 </ThemeContext.Provider>
-                <br/>
-                <div>
-                    <ThemedButton />
-                </div>
             </div>
 
         );
     }
 }
 
-export default App;
+const AppHook = () => {
+    const [theme, setTheme] = useState(themes.dark)
+    return (
+        <button onClick={() =>{
+            console.log('123');
+            const ipfs = ipfsClient({
+                host: 'localhost',
+                port: 5001,
+                protocol: 'http',
+                headers: {
+                    "Access-Control-Allow-Headers" : "*",
+                    "Access-Control-Allow-Origin": "http://localhost:3000",
+                    "Access-Control-Allow-Credentials": true,
+                    "Content-Type": "application/json"
+                }
+            })
+            const cid = ipfs.add('hello world');
+            cid.then(result =>{
+                console.log(result);
+            })
+        }}>Click</button>
+    )
+}
+
+export {
+    App, AppHook
+};
