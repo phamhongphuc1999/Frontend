@@ -1,7 +1,8 @@
 import {ThemeContext, themes} from './DynamicContext/theme-context';
 import ThemedButton from './DynamicContext/themed-button';
 import React, {useState} from "react";
-import ipfsClient from 'ipfs-http-client';
+import Pdf from "react-to-pdf";
+
 
 function Toolbar(props) {
     return (
@@ -37,28 +38,20 @@ class App extends React.Component {
     }
 }
 
-const AppHook = () => {
-    const [theme, setTheme] = useState(themes.dark)
+const ref = React.createRef();
+
+function AppHook() {
     return (
-        <button onClick={() =>{
-            console.log('123');
-            const ipfs = ipfsClient({
-                host: 'localhost',
-                port: 5001,
-                protocol: 'http',
-                headers: {
-                    "Access-Control-Allow-Headers" : "*",
-                    "Access-Control-Allow-Origin": "http://localhost:3000",
-                    "Access-Control-Allow-Credentials": true,
-                    "Content-Type": "application/json"
-                }
-            })
-            const cid = ipfs.add('hello world');
-            cid.then(result =>{
-                console.log(result);
-            })
-        }}>Click</button>
-    )
+        <div className="App">
+            <Pdf targetRef={ref} filename="code-example.pdf">
+                {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+            </Pdf>
+            <div ref={ref}>
+                <h1>Hello CodeSandbox</h1>
+                <h2>Start editing to see some magic happen!</h2>
+            </div>
+        </div>
+    );
 }
 
 export {
