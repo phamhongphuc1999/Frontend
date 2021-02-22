@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App, AppHook} from './App';
+import './index.css';
+import App from "./Appjspdf";
+import HtmlToPdf from "./AppComponentPdf";
+import App1 from './AppReactToPdf';
+import MyApp from './AppReactPdf';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <AppHook />
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <App />
+    {/*<HtmlToPdf />*/}
+    {/*<MyApp/>*/}
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
